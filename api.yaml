@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+  title: Parser .xlsx
+  version: "1.0.0"
+  servers: 
+   - url: 'http://localhost:5000/'
+apis: './app.js' 
+
+paths:
+  /parser:
+    post:
+      consumes:
+        - multipart/form-data
+      parameters:
+        - in: formData
+          name: file
+          type: file
+          required: true
+          description: File Upload
+      responses:
+        200:
+          description: OK
+        400:
+          description: Nahh
+
